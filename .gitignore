@@ -1,0 +1,6 @@
+dist/
+.env/
+deb_dist/
+iploc.egg-info/
+
+
