@@ -1,4 +1,4 @@
-# IPLOC v1.0
+# IPLOC v1.1
 
 IPLOC is a CLI geolocartor IP.
 
