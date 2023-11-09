@@ -1,9 +1,9 @@
-#IPLOC v1.0
+# IPLOC v1.0
 
 IPLOC is a CLI geolocartor IP.
 
 
-##INSTALL
+## INSTALL
 
 ```git clone https://github.com/croketillo/iploc-cli.git```
 
@@ -11,7 +11,7 @@ IPLOC is a CLI geolocartor IP.
 
 ```sudo dkpg -i python3-iploc python3-iploc_1.0-1_all.deb ```
 
-##USE
+## USE
 
 ```iploc <IP TARGET> ```
 

@@ -56,16 +56,15 @@ def main():
     parser = argparse.ArgumentParser(description="DESCRIPTION: Geolocate an IP address.")
     parser.add_argument("IP", help="The IP address you want to geolocate.")
     args = parser.parse_args()
-
     is_valid = validate_ip(args.IP)
     if is_valid:
         result = geolocate_ip(args.IP)
+        lat, long=result[3].split(",")
+        maps= f"https://www.google.com/maps/?q={lat},{long}"
 
-        print("\n" + Style.BRIGHT + "{:<10} {}".format("", Back.RED +
-                                                            Fore.WHITE + "  [" + args.IP + "] ") +
+        print("\n" + Style.BRIGHT + "{:<10} {}".format("",Fore.WHITE + "  [ " + args.IP + " ] ") +
                                                             Fore.LIGHTBLACK_EX +
-                                                            Style.NORMAL +
-                                                            Back.RESET)
+                                                            Style.NORMAL)
         print("----------------------------------------")
         print("{:<12}: {}".format("COUNTRY", Fore.YELLOW +
                                             Style.BRIGHT +
@@ -87,6 +86,11 @@ def main():
                                             result[3] +
                                             Style.NORMAL +
                                             Fore.LIGHTBLACK_EX))
+        print("{:<12}: {}".format("MAP", Fore.YELLOW +
+                                            Style.BRIGHT +
+                                            maps +
+                                            Style.NORMAL +
+                                            Fore.LIGHTBLACK_EX))
         print("{:<12}: {}".format("ORGANIZATION", Fore.YELLOW +
                                                 Style.BRIGHT +
                                                 result[4] +
@@ -103,7 +107,7 @@ def main():
                                             Style.NORMAL +
                                             Fore.LIGHTBLACK_EX))
         print("----------------------------------------")
-        print("{:<29} {}".format("", Fore.LIGHTBLACK_EX + "IPLOC v1.0\n"))
+        print("{:<29} {}".format("", Fore.LIGHTBLACK_EX + "IPLOC v1.1\n"))
     else:
         print("The specified IP is not valid. Please try again with a valid IP.")
 
